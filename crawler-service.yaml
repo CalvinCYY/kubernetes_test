@@ -2,11 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: crawler-service
+  namespace: crawler
 spec:
-  type: ClusterIP
   selector:
     app: synergychat-crawler
   ports:
     - protocol: TCP
-      port: 30080
+      port: 80 #Listening PORT, any request to the crawler should be through port 80
       targetPort: 8080
